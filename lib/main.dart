@@ -43,7 +43,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20.0, bottom: 40.0),
-                  child: Column(
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        flex: 2,
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
@@ -57,14 +61,42 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                               style:
                                   TextStyle(fontSize: 10.0, color: Colors.grey),
                             ),
-
-                            VerticalDivider(
-
-                              width: 30.0,
-                              color: Colors.greenAccent,
-                            )
                           ],
                         ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Center(
+                          child: Container(
+                            width: 80,
+                            height: 30,
+                            decoration: BoxDecoration(
+                                color: Color(0xff649D66),
+                                borderRadius: BorderRadius.circular(30.0)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(
+                                  Icons.filter_list,
+                                  color: Color(0xffF7F0F0),
+                                  size: 18.0,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  'Filtrar',
+                                  style: TextStyle(
+                                    color: Color(0xffF7F0F0),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -388,9 +420,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           TitledNavigationBarItem(title: Text('Home'), icon: Icons.home),
           TitledNavigationBarItem(title: Text('Buscar'), icon: Icons.search),
           TitledNavigationBarItem(
-              title: Text('Rentar'), icon: Icons.credit_card),
+              title: Text('Contanto'), icon: Icons.card_travel),
           TitledNavigationBarItem(
-              title: Text('Comprar'), icon: Icons.shopping_cart),
+              title: Text('Orders'), icon: Icons.shopping_cart),
         ],
       ),
     );
